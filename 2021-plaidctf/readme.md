@@ -140,7 +140,7 @@ The injected HTTP response contains a simple javascript payload extracting the f
 
 (The `<img .../>` were for debugging on the server and helped us to properly time the replacement of the payload)
 
-This would give us the first flag of Season two, for the second flag, the service which we used to upload the files was changed to only allow more restricted input. We did not solve this in time.
+This would give us the first flag of Season two. For the second flag, the service which we used to upload the files was changed to only allow more restricted input. We did not get the second flag.
 
 While this was probably the intended way of solving this challenge, another team found [a different one by exploiting the renderer](https://ptr-yudai.hatenablog.com/entry/2021/04/19/140802) :o 
 
