@@ -6,7 +6,7 @@
 
 ![](./setup.png)
 
-As described in the diagram above, we somehow had to get the flag through the victim visiting the URL supplied by us. Because of the cookie, it would probably have to be on the same origin as the flag, so if we could get XSS somehow, we get the flag. However, there was a quite strict CSP that forbid script execution except for scripts with the correct nonce.
+We were provided with the source of some services, a frontent utility that creates instances consisting of a victim (headless browser) and an IoT service. we somehow had to get the flag through the victim visiting the URL supplied by us. But to get the flag, we needed the admin cookie of the victim. If we could get XSS somehow on the same origin, we could also get the flag. However, there was a quite strict CSP that forbid script execution except for scripts with the correct nonce.
 
 ### 1. Season
 
@@ -134,7 +134,7 @@ Connection: keep-alive
 
 
 
-While chrome is downloading the payload a for the first few iframes, we replace the file with payload B so that the server now sends more than it has announced in the content-length header. Chrome will only open a certain number of connections to the same origin, so by making many requests, more requests would be made through the same connection and mistake our appended HTML response as the requested one later.
+While chrome is downloading the payload a for the first few iframes, we replace the file with payload B so that the server now sends more than it has announced in the content-length header. Chrome will only open a certain number of connections to the same origin, so by making many requests, the lower iframes would only start loading after the prior ones would finish and mistake our appended HTTP payload for the response.
 
 The injected HTTP response contains a simple javascript payload extracting the flag. Because we have full control over the HTTP headers, we don't have to worry about CSP.
 
